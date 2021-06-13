@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'dist/base1.html' %}
+{% block title %}
+Todo App
+{% endblock %}
+{% block css %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+{% endblock %}
+{% block body %}
+<div class="container1">
+  <form id = "create-task" method = "post">
+  <p>
+
+      <label for="new-task">Add task</label>
+      <input id="new-task" type="text" required>
+      <input id="task-cost" type="number" placeholder="Reward for the task" required>
+
+      <button type="submit">Add</button>
+  </p>
+  </form>
+
+  <h3>Todo</h3>
+  <ul id="incomplete-tasks">
+    {% for goal in context['goals'] %}
+    <li class="incomplete-list">
+      <input type="checkbox">
+      <p>
+      <label data-id = "{{goal[0]}}">{{goal[1]}}</label>
+      <label>: {{goal[3]}} </label>
+      </p>
+      <input type="text">
+      <button class="edit">Edit</button>
+      <button class="delete">Delete</button>
+    </li>
+    {% endfor %}
+
+  </ul>
+
+  <h3>Completed</h3>
+  <ul id="completed-tasks">
+    {% for goal in context['goals_completed'] %}
+    <li class="complete-list">
+      <input type="checkbox" checked>
+      <label data-id = "{{goal[0]}}">{{goal[1]}}</label>
+      <input type="text">
+      <button class="edit">Edit</button>
+      <button class="delete">Delete</button>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+{% endblock %}

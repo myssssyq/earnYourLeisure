@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title%} {% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'><link rel="stylesheet" href="style_base.css">
+{% block css %}
+{% endblock %}
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Earn your leisure</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            {% if context['user'] %}
+            <li {% if context['menu'] == 'goals' %} class="active" {% endif %}><a href="{{url_for('home')}}">Goals</a></li>
+            <li {% if context['menu'] == 'rewards' %} class="active" {% endif %}><a href="{{url_for('rewards')}}">Rewards</a></li>
+            {% endif %}
+            {% if not context['user'] %}
+            <li {% if context['menu'] == 'login' %} class="active" {% endif %}><a href="{{url_for('login')}}">Login</a></li>
+            <li {% if context['menu'] == 'register' %} class="active" {% endif %}><a href="{{url_for('register')}}">Register</a></li>
+            {% endif %}
+            <li><a href="{{url_for('exit')}}">Log out</a></li>
+            {% if context['user'] %}
+            <li><a id = "wallet" >Wallet: {{ context['wallet'] }}</a></li>
+            {% endif %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+     <!-- /container -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="script_base.js"></script>
+
+</body>
+</html>

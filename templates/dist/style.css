@@ -1,0 +1,176 @@
+/* Basic Style */
+body {
+  background: rgb(22,160,133);
+background: linear-gradient(0deg, rgba(22,160,133,1) 0%, rgba(255,255,255,1) 63%);
+}
+.container1 {
+  display: block;
+  width: 400px;
+  background: #FFFFFF;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  margin: 100px auto 0;
+  font-family: Lato, sans-serif;
+}
+ul#incomplete-tasks {
+  margin: 0;
+  padding: 0;
+}
+ul#completed-tasks{
+  margin: 0;
+  padding: 0;
+}
+li.incomplete-list * {
+  float: left;
+}
+li.incomplete-list, h3 {
+  clear:both;
+  list-style:none;
+}
+li.complete-list * {
+  float: left;
+}
+li.complete-list, h3 {
+  clear:both;
+  list-style:none;
+}
+input, button {
+  outline: none;
+}
+button {
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  margin: 10px 0 0;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+}
+button:hover {
+  color: #333;
+}
+/* Heading */
+h3,
+label[for='new-task'] {
+  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid #333;
+  padding: 30px 20px 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+input[type="text"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 35px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: #888;
+}
+input[type="text"]:focus {
+  color: #333;
+}
+
+/* New Task */
+label[for='new-task'] {
+  display: block;
+  margin: 0 0 20px;
+}
+input#new-task {
+  float: left;
+  width: 318px;
+}
+input#task-cost {
+  float: left;
+  width: 218px;
+}
+
+input[type="number"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 35px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: #888;
+}
+input[type="number"]:focus {
+  color: #333;
+}
+
+p > button:hover {
+  color: #0FC57C;
+}
+
+/* Task list */
+li.complete-list {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+li.incomplete-list {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+li > label {
+  font-size: 18px;
+  line-height: 40px;
+  width: 237px;
+  padding: 0 0 0 11px;
+}
+li > p.rewards-labels {
+  font-size: 18px;
+  line-height: 40px;
+  width: 237px;
+  padding: 0px 20px 0px;
+}
+li > p {
+  font-size: 18px;
+  line-height: 40px;
+  width: 237px;
+}
+li > p#buttons-list {
+  font-size: 18px;
+  line-height: 40px;
+  width: 1537px;
+}
+li >  input[type="text"] {
+  width: 226px;
+}
+li > .delete:hover {
+  color: #CF2323;
+}
+
+/* Completed */
+#completed-tasks label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Edit Task */
+ul li input[type=text] {
+  display:none;
+}
+
+ul li.editMode input[type=text] {
+  display:block;
+}
+
+ul li.editMode label {
+  display:none;
+}

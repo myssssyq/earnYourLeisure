@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'dist/base1.html' %}
+{% block title %}
+Register
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="register.css">
+{% endblock %}
+{% block body %}
+<div id="register-box">
+    <div class="left">
+      <h1>Register</h1>
+      <form action = "{{url_for('add_account')}}" method = "post">
+        <input type="text" name="username" placeholder="Username" />
+        <input type="text" name="name" placeholder="Name" />
+        <input type="text" name="surname" placeholder="Surname" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="password" name="repeat password" placeholder="Repeat password" />
+
+        <input type="submit" name="register_submit" value ="Register"/>
+      </form>
+    </div>
+</div>
+{% endblock %}

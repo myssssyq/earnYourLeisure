@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'dist/base1.html' %}
+{% block title %}
+Login
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="login.css">
+{% endblock %}
+{% block body %}
+<div id="login-box">
+    <div class="left">
+      <h1>Login</h1>
+      <form action = "{{url_for('login_account')}}" method = "post">
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="submit" name="login_submit" value="Login" />
+      </form>
+    </div>
+</div>
+{% endblock %}
